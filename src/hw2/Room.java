@@ -21,6 +21,9 @@ public class Room {
     if (pricePerNight < 0) {
       throw new IllegalArgumentException("Price per night cannot be negative");
     }
+    if (numberOfGuests < 0) {
+      throw new IllegalArgumentException("Number of guests cannot be negative");
+    }
     this.pricePerNight = pricePerNight;
     this.numberOfGuests = 0;
     this.maxOccupancy = roomType.getMaxOccupancy();

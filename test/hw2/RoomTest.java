@@ -19,7 +19,7 @@ public class RoomTest {
    */
   @Test
   public void testBookRoom() {
-    Room testRoom = new Room(Room.RoomType.DOUBLE, 150.0);
+    Room testRoom = new Room(RoomType.DOUBLE, 150.0);
     assertTrue(testRoom.bookRoom(2));
     assertFalse(testRoom.bookRoom(1)); // Room already booked
     assertFalse(testRoom.bookRoom(2));
@@ -31,7 +31,7 @@ public class RoomTest {
    */
   @Test
   public void testBookRoomInvalidGuests() {
-    Room testRoom = new Room(Room.RoomType.FAMILY, 250.0);
+    Room testRoom = new Room(RoomType.FAMILY, 250.0);
     assertThrows(IllegalArgumentException.class, () -> testRoom.bookRoom(-12));
     assertThrows(IllegalArgumentException.class, () -> testRoom.bookRoom(0));
     assertThrows(IllegalArgumentException.class, () -> testRoom.bookRoom(5));
@@ -42,7 +42,7 @@ public class RoomTest {
    */
   @Test
   public void testGetPerNight() {
-    Room testRoom = new Room(Room.RoomType.FAMILY, 250.0);
+    Room testRoom = new Room(RoomType.FAMILY, 250.0);
     assertEquals(250, testRoom.getPricePerNight());
     assertNotEquals(350, testRoom.getPricePerNight());
   }
@@ -52,7 +52,7 @@ public class RoomTest {
    */
   @Test
   public void testGetNumberOfGuests() {
-    Room testRoom = new Room(Room.RoomType.FAMILY, 250.0);
+    Room testRoom = new Room(RoomType.FAMILY, 250.0);
     testRoom.bookRoom(3);
     assertEquals(3, testRoom.getNumberOfGuests());
   }
@@ -62,10 +62,10 @@ public class RoomTest {
    */
   @Test
   public void testIsAvailable() {
-    Room testRoom = new Room(Room.RoomType.SINGLE, 100);
+    Room testRoom = new Room(RoomType.SINGLE, 100);
     testRoom.bookRoom(1);
     assertFalse(testRoom.isAvailable());
-    Room testOtherRoom = new Room(Room.RoomType.FAMILY, 250);
+    Room testOtherRoom = new Room(RoomType.FAMILY, 250);
     testOtherRoom.bookRoom(1);
     assertFalse(testOtherRoom.isAvailable());
   }
