@@ -25,14 +25,16 @@ public class MailItem {
     this.width = width;
     this.height = height;
     this.depth = depth;
-    this.recipient = recipient;
+    // Defensive copy to preserve immutability
+    this.recipient = new Recipient(recipient);
   }
 
   /**
    * The getter method for Recipient object. Returns the object of Recipient.
    */
   public Recipient getRecipient() {
-    return recipient;
+    // Return a defensive copy to preserve immutability
+    return new Recipient(this.recipient);
   }
 
   /**

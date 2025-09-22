@@ -25,6 +25,18 @@ public class Recipient {
     this.email = email;
   }
 
+  /**
+   * Copy constructor for Recipient.
+   */
+  public Recipient(Recipient other) {
+    if (other == null) {
+      throw new IllegalArgumentException("Cannot copy null Recipient");
+    }
+    this.firstName = other.firstName;
+    this.lastName = other.lastName;
+    this.email = other.email;
+  }
+
   /** Returns the first name of the recipient. */
   public void setEmail(String email) {
     if (email == null || email.isEmpty()) {
