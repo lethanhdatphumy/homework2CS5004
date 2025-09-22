@@ -13,7 +13,7 @@ class LockerTest {
   /** Sets up a valid Locker instance before each test. */
   @BeforeEach
   public void setUp() {
-    Locker locker = new Locker(10, 10, 10, null);
+    Locker locker = new Locker(10, 10, 10);
   }
 
   /**
@@ -22,9 +22,9 @@ class LockerTest {
    */
   @Test
   public void testConstructorInvalidInputs() {
-    assertThrows(IllegalArgumentException.class, () -> new Locker(0, 10, 10, null));
-    assertThrows(IllegalArgumentException.class, () -> new Locker(10, -1, 10, null));
-    assertThrows(IllegalArgumentException.class, () -> new Locker(10, 10, 0, null));
+    assertThrows(IllegalArgumentException.class, () -> new Locker(0, 10, 10));
+    assertThrows(IllegalArgumentException.class, () -> new Locker(10, -1, 10));
+    assertThrows(IllegalArgumentException.class, () -> new Locker(10, 10, 0));
   }
 
   /**
@@ -33,7 +33,7 @@ class LockerTest {
    */
   @Test
   public void testAddMail() {
-    Locker locker = new Locker(10, 10, 10, null);
+    Locker locker = new Locker(10, 10, 10);
     Recipient recipient = new Recipient("John", "Doe", ":Doe@northeastern.edu");
     MailItem validMail = new MailItem(5, 5, 5, recipient);
     MailItem tooLargeMail = new MailItem(15, 5, 5, recipient);
