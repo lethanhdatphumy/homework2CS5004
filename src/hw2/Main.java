@@ -19,7 +19,7 @@ public class Main {
     System.out.println("MailItem created for: " + mailItem.getRecipient());
 
     // Create a locker
-    Locker locker = new Locker(10, 10, 10, null);
+    Locker locker = new Locker(10, 10, 10);
 
     // Add mail to locker
     locker.addMail(mailItem);
