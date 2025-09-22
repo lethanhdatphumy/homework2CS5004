@@ -8,7 +8,9 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
-/** Unit tests for the {@link Room} class. */
+/**
+ * Unit tests for the {@link Room} class.
+ */
 public class RoomTest {
 
   /**
