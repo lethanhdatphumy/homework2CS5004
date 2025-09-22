@@ -49,11 +49,10 @@ public class Room {
    *
    * @param guests number of guests to book
    * @return true if booking succeeded, false otherwise
-   * @throws IllegalArgumentException if guests <= 0 or > maxOccupancy
    */
   public boolean bookRoom(int guests) {
     if (guests <= 0 || guests > maxOccupancy) {
-      throw new IllegalArgumentException("Invalid number of guests");
+      return false;
     }
     if (isAvailable()) {
       numberOfGuests = guests;

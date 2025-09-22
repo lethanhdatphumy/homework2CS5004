@@ -8,9 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
-/**
- * Unit tests for the {@link Room} class.
- */
+/** Unit tests for the {@link Room} class. */
 public class RoomTest {
 
   /**
@@ -37,9 +35,7 @@ public class RoomTest {
     assertThrows(IllegalArgumentException.class, () -> testRoom.bookRoom(5));
   }
 
-  /**
-   * Tests the getPricePerNight method.
-   */
+  /** Tests the getPricePerNight method. */
   @Test
   public void testGetPerNight() {
     Room testRoom = new Room(RoomType.FAMILY, 250.0);
@@ -47,9 +43,7 @@ public class RoomTest {
     assertNotEquals(350, testRoom.getPricePerNight());
   }
 
-  /**
-   * Tests the getNumberOfGuests method.
-   */
+  /** Tests the getNumberOfGuests method. */
   @Test
   public void testGetNumberOfGuests() {
     Room testRoom = new Room(RoomType.FAMILY, 250.0);
@@ -57,9 +51,7 @@ public class RoomTest {
     assertEquals(3, testRoom.getNumberOfGuests());
   }
 
-  /**
-   * Tests the isAvailable method.
-   */
+  /** Tests the isAvailable method. */
   @Test
   public void testIsAvailable() {
     Room testRoom = new Room(RoomType.SINGLE, 100);
