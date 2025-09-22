@@ -1,5 +1,6 @@
 package hw2;
 
+
 /**
  * Represents a hotel room with a specific type, occupancy, and price per night.
  */
@@ -8,22 +9,6 @@ public class Room {
   private int numberOfGuests; // starts at 0
   private final double pricePerNight;
 
-  /** Constructs a Room object with the given price per night and room type. */
-  public enum RoomType {
-    SINGLE(1),
-    DOUBLE(2),
-    FAMILY(4);
-
-    private final int maxOccupancy;
-
-    RoomType(int maxOccupancy) {
-      this.maxOccupancy = maxOccupancy;
-    }
-
-    public int getMaxOccupancy() {
-      return maxOccupancy;
-    }
-  }
 
   /**
    * Constructs a Room with the given type and nightly price.
